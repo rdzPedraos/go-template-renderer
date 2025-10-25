@@ -1,8 +1,14 @@
 # Go Template Renderer
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Go Version](https://img.shields.io/badge/Go-1.21+-00ADD8?logo=go)](https://go.dev/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 A powerful and flexible Go template rendering tool with hot reload capabilities and built-in web server for live development.
 
 🆓 **Open Source** - MIT License. Free to use, modify and distribute in your projects!
+
+![Go Template Renderer Demo](img/intro.png)
 
 ## Features
 
@@ -13,33 +19,13 @@ A powerful and flexible Go template rendering tool with hot reload capabilities 
 
 ## Quick Start
 
-### Using the Pre-built Binary
-
-The easiest way to use this tool is with the pre-built `tmp-render` binary:
-
 ```bash
-# Watch mode with hot reload (default behavior)
+git clone https://github.com/rdzPedraos/go-template-renderer.git
+cd go-template-renderer
 ./tmp-render
 ```
 
 Then open your browser at [http://localhost:5500](http://localhost:5500)
-
-```bash
-# Single render without watch mode
-./tmp-render --watch=false
-```
-
-### Using with Go
-
-Alternatively, you can run directly with Go:
-
-```bash
-# Watch mode (default)
-go run main.go
-
-# Single render without watch mode
-go run main.go --watch=false
-```
 
 ## Command Line Options
 
@@ -144,19 +130,39 @@ Ensure your template path is correct relative to where you run the command:
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-### Installation for Development
+### Development Setup
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
-cd templates
+git clone https://github.com/rdzPedraos/go-template-renderer.git
+cd go-template-renderer
 
 # Download dependencies
 go mod download
 
+# Install git hooks (optional but recommended)
+./install-hooks.sh
+```
+
+### Development Workflow
+
+```bash
 # Build the binary
 go build -o tmp-render
+
+# Run with hot reload
+./tmp-render
+
+# Or run directly with Go (no build needed)
+go run main.go
+
+# Single render without watch mode
+go run main.go --watch=false
 ```
+
+### Git Hooks
+
+The pre-commit hook automatically builds the binary and generates `output.html` before each commit. To skip it: `git commit --no-verify`
 
 ### Project Structure
 
