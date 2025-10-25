@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "author": "Go Developer",
+  "status": "Production Ready",
+  "features": [
+    {
+      "icon": "✨",
+      "title": "Template Rendering",
+      "description": "Renders HTML templates using Go's template system (html/template). Full support for loops, conditionals and variables."
+    },
+    {
+      "icon": "🔄",
+      "title": "Fast Hot Reload",
+      "description": "Instant changes in the browser with intelligent debouncing. No manual reloads, no excessive renders, maximum productivity."
+    },
+    {
+      "icon": "📦",
+      "title": "Standalone Binary",
+      "description": "A single binary with no external dependencies. Easy to distribute and deploy in any environment."
+    }
+  ]
+}

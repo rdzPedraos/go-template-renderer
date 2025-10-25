@@ -1,0 +1,22 @@
+# Binaries
+tmp-render
+tmp-render-*
+*.exe
+
+# Output files
+output.html
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Go
+*.test
+*.out
