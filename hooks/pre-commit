@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Git Hook: Pre-commit
+# Automatically builds the binary and generates output.html before committing
+
+set -e
+
+echo "🔨 Building binary..."
+go build -o tmp-render main.go
+
+echo "📄 Generating output.html..."
+./tmp-render --watch=false --output=output.html
+
+# Check if output.html was modified
+if git diff --quiet output.html 2>/dev/null; then
+  echo "✅ No changes in output.html"
+else
+  echo "📝 Adding updated output.html to commit..."
+  git add output.html
+fi
+
+# Check if tmp-render binary exists and add it
+if [ -f tmp-render ]; then
+  echo "📦 Adding binary to commit..."
+  git add tmp-render
+fi
+
+echo "✨ Build complete!"
+
