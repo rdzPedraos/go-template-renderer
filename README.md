@@ -22,6 +22,7 @@ A powerful and flexible Go template rendering tool with hot reload capabilities 
 ```bash
 git clone https://github.com/rdzPedraos/go-template-renderer.git
 cd go-template-renderer
+go build -o tmp-render
 ./tmp-render
 ```
 
@@ -140,8 +141,8 @@ cd go-template-renderer
 # Download dependencies
 go mod download
 
-# Install git hooks (optional but recommended)
-./install-hooks.sh
+# Build the binary
+go build -o tmp-render
 ```
 
 ### Development Workflow
@@ -160,16 +161,11 @@ go run main.go
 go run main.go --watch=false
 ```
 
-### Git Hooks
-
-The pre-commit hook automatically builds the binary and generates `output.html` before each commit. To skip it: `git commit --no-verify`
-
 ### Project Structure
 
 ```
 .
 ├── main.go           # Entry point and main flow
-├── tmp-render        # Pre-built binary
 ├── src/              # Source code package
 │   └── builder/
 │       ├── main.go      # Template rendering logic
@@ -182,6 +178,9 @@ The pre-commit hook automatically builds the binary and generates `output.html` 
 │   ├── template.html
 │   └── config.json
 ├── img/              # Static assets
+├── .github/
+│   └── workflows/
+│       └── static.yml   # GitHub Actions for Pages deployment
 ├── go.mod            # Go module definition
 ├── go.sum            # Dependency checksums
 └── README.md         # This file

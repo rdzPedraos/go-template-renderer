@@ -1,11 +1,12 @@
-# Binaries (keep tmp-render for distribution)
+# Binaries
+tmp-render
 tmp-render-linux
 tmp-render-windows
 tmp-render-mac
 *.exe
 
-# Output files (keep output.html as example)
-# output.html is now tracked in git
+# Output files
+output.html
 
 # IDE
 .vscode/
